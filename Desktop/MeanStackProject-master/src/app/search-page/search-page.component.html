@@ -1,0 +1,66 @@
+<p>search-page works!</p>
+
+
+<mat-card>
+    
+    
+    
+        <mat-form-field  ><br>
+        <input placeholder="Enter Name:"  matInput type="text" [(ngModel)]="enteredValue" />
+        <!-- <button (click)="clickMe()" >Click</button> -->
+        <!-- <p *ngFor="let p of filteredArrayProduct ">{{p.name}}</p> -->
+          <mat-error style="color: blueviolet">What to seach?</mat-error>
+          
+        </mat-form-field><br>
+      
+    
+    
+    
+    
+    
+     
+      <button mat-raised-button
+              color="primary"
+              type="submit" (click)="clickMe()" >Search</button>
+    
+            
+            
+    
+    </mat-card>
+    
+    
+
+
+   
+<div style="height: 600px" class="d-inline-flex p-2" *ngFor="let gpu of filteredArrayProduct">
+
+
+  <div class="card" style="width: 18rem;">
+    <!-- <img src="{{gpu.imgPathCompanyLogo}}" > -->
+    <img class="card-img-top" src="{{gpu.imgPath}}" >
+
+    <img style="margin-top: 10px" width="80px" height="28px" src="{{gpu.imgPathCompanyLogo}}">
+
+
+
+    <div id="start"></div>
+
+
+
+    <div class="card-body">
+      <h5 class="card-title">{{gpu.name}}</h5>
+
+      <div style="display: inline;margin-left: 5px" *ngFor="let number of [0,1,2,3,4] "  >
+        <p style="display: inline" *ngIf="number<gpu.numOfStars">
+          <i style="color: #fbb535" class="fa fa-star" aria-hidden="true"></i></p>
+      </div >
+
+
+      <p class="card-text">{{gpu.description}}</p>
+      <h5 class="card-title">{{gpu.price}}</h5>
+      <a style="margin-bottom: 10px" href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+
+  </div>
+</div>
+
